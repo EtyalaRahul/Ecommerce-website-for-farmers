@@ -1,0 +1,145 @@
+# SVG for a much larger tree, doubling the size with more leaves and branches
+svg_code_biggest_tree = '''<svg id="biggestTree" xmlns="http://www.w3.org/2000/svg" width="1000" height="1600" viewBox="0 0 1000 1600">
+    <rect width="1000" height="1600" fill="#f0f8ff" />
+    
+    <!-- Trunk -->
+    <line id="trunk" x1="500" y1="1580" x2="500" y2="1580" stroke="saddlebrown" stroke-width="40" stroke-linecap="round"/>
+    
+    <!-- Branches -->
+    <line id="branch1" x1="500" y1="1400" x2="500" y2="1400" stroke="saddlebrown" stroke-width="30" stroke-linecap="round"/>
+    <line id="branch2" x1="500" y1="1240" x2="500" y2="1240" stroke="saddlebrown" stroke-width="25" stroke-linecap="round"/>
+    <line id="branch3" x1="500" y1="1080" x2="500" y2="1080" stroke="saddlebrown" stroke-width="20" stroke-linecap="round"/>
+    
+    <!-- Leaves -->
+    <ellipse id="leaf1" cx="470" cy="1380" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf2" cx="530" cy="1380" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf3" cx="430" cy="1220" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf4" cx="570" cy="1220" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf5" cx="390" cy="1060" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf6" cx="610" cy="1060" rx="0" ry="0" fill="forestgreen" />
+    
+    <!-- Extra leaves for a fuller canopy -->
+    <ellipse id="leaf7" cx="450" cy="1300" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf8" cx="550" cy="1300" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf9" cx="410" cy="1140" rx="0" ry="0" fill="forestgreen" />
+    <ellipse id="leaf10" cx="590" cy="1140" rx="0" ry="0" fill="forestgreen" />
+    
+    <!-- Tree Top Leaves -->
+    <ellipse id="leafTop" cx="500" cy="900" rx="0" ry="0" fill="forestgreen" />
+    
+    <!-- Flowers -->
+    <circle id="flower1" cx="480" cy="1350" r="0" fill="pink" />
+    <circle id="flower2" cx="520" cy="1350" r="0" fill="pink" />
+    <circle id="flower3" cx="470" cy="1190" r="0" fill="pink" />
+    <circle id="flower4" cx="530" cy="1190" r="0" fill="pink" />
+    <circle id="flowerTop" cx="500" cy="870" r="0" fill="pink" />
+    
+    <!-- Fruits -->
+    <circle id="fruit1" cx="470" cy="1320" r="0" fill="orange" />
+    <circle id="fruit2" cx="530" cy="1320" r="0" fill="orange" />
+    <circle id="fruit3" cx="460" cy="1160" r="0" fill="orange" />
+    <circle id="fruit4" cx="540" cy="1160" r="0" fill="orange" />
+    <circle id="fruitTop" cx="500" cy="850" r="0" fill="orange" />
+    
+    <script type="application/ecmascript">
+        <![CDATA[
+            var trunk = document.getElementById('trunk');
+            var branch1 = document.getElementById('branch1');
+            var branch2 = document.getElementById('branch2');
+            var branch3 = document.getElementById('branch3');
+            var leaf1 = document.getElementById('leaf1');
+            var leaf2 = document.getElementById('leaf2');
+            var leaf3 = document.getElementById('leaf3');
+            var leaf4 = document.getElementById('leaf4');
+            var leaf5 = document.getElementById('leaf5');
+            var leaf6 = document.getElementById('leaf6');
+            var leaf7 = document.getElementById('leaf7');
+            var leaf8 = document.getElementById('leaf8');
+            var leaf9 = document.getElementById('leaf9');
+            var leaf10 = document.getElementById('leaf10');
+            var leafTop = document.getElementById('leafTop');
+            var flower1 = document.getElementById('flower1');
+            var flower2 = document.getElementById('flower2');
+            var flower3 = document.getElementById('flower3');
+            var flower4 = document.getElementById('flower4');
+            var flowerTop = document.getElementById('flowerTop');
+            var fruit1 = document.getElementById('fruit1');
+            var fruit2 = document.getElementById('fruit2');
+            var fruit3 = document.getElementById('fruit3');
+            var fruit4 = document.getElementById('fruit4');
+            var fruitTop = document.getElementById('fruitTop');
+            
+            var trunkHeight = 1580;
+            var animationStep = 4;
+            
+            function animateTree() {
+                // Grow the trunk
+                if (trunk.y2.baseVal.value > 1000) {
+                    trunk.y2.baseVal.value -= animationStep;
+                } 
+                // Grow the branches
+                else if (branch1.x2.baseVal.value < 600) {
+                    branch1.x2.baseVal.value += animationStep;
+                    branch2.x2.baseVal.value += animationStep;
+                    branch3.x2.baseVal.value += animationStep;
+                    branch1.x1.baseVal.value -= animationStep;
+                    branch2.x1.baseVal.value -= animationStep;
+                    branch3.x1.baseVal.value -= animationStep;
+                } 
+                // Grow the leaves
+                else if (leaf1.rx.baseVal.value < 60) {
+                    leaf1.rx.baseVal.value += 3;
+                    leaf1.ry.baseVal.value += 1.5;
+                    leaf2.rx.baseVal.value += 3;
+                    leaf2.ry.baseVal.value += 1.5;
+                    leaf3.rx.baseVal.value += 3;
+                    leaf3.ry.baseVal.value += 1.5;
+                    leaf4.rx.baseVal.value += 3;
+                    leaf4.ry.baseVal.value += 1.5;
+                    leaf5.rx.baseVal.value += 3;
+                    leaf5.ry.baseVal.value += 1.5;
+                    leaf6.rx.baseVal.value += 3;
+                    leaf6.ry.baseVal.value += 1.5;
+                    leaf7.rx.baseVal.value += 3;
+                    leaf7.ry.baseVal.value += 1.5;
+                    leaf8.rx.baseVal.value += 3;
+                    leaf8.ry.baseVal.value += 1.5;
+                    leaf9.rx.baseVal.value += 3;
+                    leaf9.ry.baseVal.value += 1.5;
+                    leaf10.rx.baseVal.value += 3;
+                    leaf10.ry.baseVal.value += 1.5;
+                    leafTop.rx.baseVal.value += 5;
+                    leafTop.ry.baseVal.value += 3;
+                } 
+                // Grow flowers and fruits
+                else if (flower1.r.baseVal.value < 12) {
+                    flower1.r.baseVal.value += 0.8;
+                    flower2.r.baseVal.value += 0.8;
+                    flower3.r.baseVal.value += 0.8;
+                    flower4.r.baseVal.value += 0.8;
+                    flowerTop.r.baseVal.value += 0.8;
+                    fruit1.r.baseVal.value += 0.8;
+                    fruit2.r.baseVal.value += 0.8;
+                    fruit3.r.baseVal.value += 0.8;
+                    fruit4.r.baseVal.value += 0.8;
+                    fruitTop.r.baseVal.value += 0.8;
+                }
+                // Restart animation
+                else {
+                    resetTree();
+                }
+                
+                requestAnimationFrame(animateTree);
+            }
+            
+            function resetTree() {
+                trunk.y2.baseVal.value = trunkHeight;
+                branch1.x2.baseVal.value = 500;
+                branch1.x1.baseVal.value = 500;
+                branch2.x2.baseVal.value = 500;
+                branch2.x1.baseVal.value = 500;
+                branch3.x2.baseVal.value = 500;
+                branch3.x1.baseVal.value = 500;
+                leaf1.rx.baseVal.value = 0;
+                leaf1.ry.baseVal.value = 0;
+                leaf2.rx.baseVal.value

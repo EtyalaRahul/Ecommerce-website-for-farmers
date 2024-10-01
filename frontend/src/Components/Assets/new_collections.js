@@ -1,0 +1,66 @@
+let new_collections = [
+  {
+    id:1,
+    name:"Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image:'https://th.bing.com/th/id/OIP.Yeq0F2PpzV5O0L6pHOdQ1wHaEg?w=276&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+    new_price:50.00,
+    old_price:80.50,
+  },
+  {
+    id: 3,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image: 'https://th.bing.com/th/id/OIP.zDsZZ_BYpL_ytMVF5jLwoQHaFF?w=262&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+    new_price: 60.0,
+    old_price: 100.5,
+  },
+  {
+    id: 6,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    category: "women",
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlHlewKMgxGj47U6sox-rV7itf_HwDu38VuQ&s',
+    new_price: 85.0,
+    old_price: 120.5,
+  }
+  ,
+  {
+    id: 8,
+    name: "Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse",
+    image: "data:image/jpeg;base64,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",
+    new_price: 100.0,
+    old_price: 150.0,
+  },
+  {
+    id: 15,
+    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    category: "men",
+    image: "https://th.bing.com/th/id/OIP.hZgRHYppsZ15dfJ4juj5-gHaEe?w=257&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 16,
+    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    category: "men",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5yQj1FI2CWJEnT91Yr4royZszrdIl5fsDkg&s",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 17,
+    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    category: "men",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCqmBVOKPwvBPy347G-QWX4sPXtGT2c9WI3Q&s",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 18,
+    name: "Men Green Solid Zippered Full-Zip Slim Fit Bomber Jacket",
+    category: "men",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ6K0Vp-jqY2fHvJj89uho5_uOVdoUL4qfaw&s",
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+];
+
+export default new_collections;
